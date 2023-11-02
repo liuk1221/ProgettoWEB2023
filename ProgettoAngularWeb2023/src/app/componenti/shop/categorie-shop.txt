@@ -1,0 +1,11 @@
+CATEGORIE SHOP (10):
+- Selle                         //OK
+- Sottopancia                   //OK
+- Sottosella                    //OK
+- Pettorali                     //OK
+- Testiere                      //OK
+- Redini                        //OK
+- Staffili                      //OK
+- Staffe                        //OK
+- Protezioni                    //OK
+- Cap                           //OK                     

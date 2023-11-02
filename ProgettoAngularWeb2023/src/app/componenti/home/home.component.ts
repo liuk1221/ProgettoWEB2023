@@ -6,5 +6,40 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
+  immagini = [
+    {src: '../../../assets/HomePageImages/DivSecCategorie/selle.png', testo: 'SELLE', mostraIlTesto: false },
+    {src: '../../../assets/HomePageImages/DivSecCategorie/sottopancia.jpg', testo: 'SOTTOPANCIA', mostraIlTesto: false },
+    {src: '../../../assets/HomePageImages/DivSecCategorie/sottosella.jpg', testo: 'SOTTOSELLA', mostraIlTesto: false },
+    {src: '../../../assets/HomePageImages/DivSecCategorie/pettorali.jpg', testo: 'PETTORALI', mostraIlTesto: false },
+    {src: '../../../assets/HomePageImages/DivSecCategorie/testiere.jpg', testo: 'TESTIERE', mostraIlTesto: false },
+    {src: '../../../assets/HomePageImages/DivSecCategorie/redini.jpg', testo: 'REDINI', mostraIlTesto: false },
+    {src: '../../../assets/HomePageImages/DivSecCategorie/staffili.jpg', testo: 'STAFFILI', mostraIlTesto: false },
+    {src: '../../../assets/HomePageImages/DivSecCategorie/staffe.jpg', testo: 'STAFFE', mostraIlTesto: false },
+    {src: '../../../assets/HomePageImages/DivSecCategorie/protezioni.png', testo: 'PROTEZIONI', mostraIlTesto: false },
+    {src: '../../../assets/HomePageImages/DivSecCategorie/cap.jpg', testo: 'CAP', mostraIlTesto: false }
+  ]
+
+
+  //Funzioni per lo zoom delle immagini
+  zoomIn(event: MouseEvent) {
+    const immagine = event.target as HTMLImageElement;
+    immagine.style.transform = 'scale(1.2)';                // Modifica il valore per controllare il livello di zoom
+    immagine.style.filter = 'grayscale(100%)'+'blur(1px)';  //Trasforma in bianco e nero e filtra con effetto blur
+  }
+
+  zoomOut(event: MouseEvent) {
+    const immagine = event.target as HTMLImageElement;
+    immagine.style.transform = 'scale(1)';
+    immagine.style.filter = 'grayscale(0%)';                //Trasforma a colori
+  }
+
+  //Funzioni per mostrare o meno il testo nelle immagini
+  mostraTesto(item){
+    item.mostraIlTesto=true;
+  }
+  nascondiTesto(item){
+    item.mostraIlTesto=false;
+  }
+
 
 }

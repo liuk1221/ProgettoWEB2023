@@ -1,0 +1,132 @@
+//-------------------------------------------PRIMA SEZIONE------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------
+.divPri{
+    display: flex;
+    flex-direction: column;
+    padding-top: 300px;
+    width: 100%;
+    background-image: url('../../../assets/HomePageImages/DivPriImage.jpg'); //Percorso relativo
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh;
+    padding-left: 10vh;
+}
+//FontStyle generale del testo
+.divPriContent{
+    margin: 30px;
+    color: #8e8e8e;
+    font-family: Poppins;
+    font-size: auto;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+}
+
+//FontStyle del bottone
+.buyNow{
+    background-color: white;
+    color: #8e8e8e;
+    font-family: Poppins;
+    font-size:3vh;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+    padding: 35px;
+}
+
+.textBackground{
+    background-color: white;                                  //Utile a colorare il box di bianco
+    width: fit-content;                                         //Utile a mantenere il box proporzionale al conenuto
+    box-shadow: 2px 4px 12px 0px rgba(0, 0, 0, 0.25);         //Utile ad aggiungere l'effetto ombreggiatura intorno al contenitore
+    border-radius: 1vh;                                         //Utile ad arrotondare i bordi del contenitore
+}
+
+//--------------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------
+
+.divSec{
+    display: flex;
+    width: 100%;
+    background-color: white;
+
+    // border-top: 0.5px solid #8e8e8e;                        //Idea bordo sopra e sotto al contenitore -Deprecated-
+    // border-bottom: 0.5px solid #8e8e8e;
+
+    height: 100vh;
+    flex-direction: row;
+    box-shadow: 2px 4px 12px 0px rgba(0, 0, 0, 0.25);         //Utile ad aggiungere l'effetto ombreggiatura intorno al contenitore
+
+    padding-top: 5vh;
+}
+
+.contenitoreDivSec {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;                             //Distribuisce gli elementi orizzontalmente in modo uniforme
+  }
+  
+  .bloccoDivSec {
+    width: 40vh;                                                //Larghezza del blocco quadrato
+    height: 40vh;                                               //Altezza del blocco quadrato
+    background-color: #8e8e8e;                                //Cambia il colore di sfondo, anche se sarà poi coperto da immagine
+    margin: 10px;                                               //Utile ad aggiungere un margine tra i blocchi
+    box-shadow: 2px 4px 12px 0px rgba(0, 0, 0, 0.25);         //Utile ad aggiungere l'effetto ombreggiatura intorno al contenitore
+    padding: 1vh;
+
+    //Questi due comandi sono necessari per far si che quando si attivano le funzioni di zoom non vado ad ingrandire l'immagine al di fuori del quadrato
+    position: relative;
+    overflow: hidden;                                           //Evita l'apparizione della barra di scorrimento
+  }
+
+  .bloccoDivSec img{
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    transition: transform 0.3s;                                 //Per la transizione dello zoom
+  }
+  
+  .bloccoDivSec p.testo{
+    //Per il posizionamento
+    position: absolute;
+    top: 50%;
+
+    //Per il FontStyle
+    color: #8e8e8e;
+    font-family: Poppins;
+    font-size: 5vh;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+    background-color: white;
+    box-shadow: 2px 4px 12px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 1vh;
+    width: 100%;
+    border: 3px solid #8e8e8e;                        
+  }
+
+//--------------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------
+
+.divTer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-image: url('../../../assets/HomePageImages/DivSecImage.jpg'); //Percorso relativo
+    background-attachment: fixed;
+    background-size: cover;
+    
+    height: 100vh;
+    padding-top: 80px;
+
+    align-items: center;
+}
+
+.textBackground2{
+    color: #8e8e8e;
+    background-color: white;                                  //Utile a colorare il box di bianco
+    width: fit-content;                                         //Utile a mantenere il box proporzionale al conenuto
+    box-shadow: 2px 4px 12px 0px rgba(0, 0, 0, 0.25);         //Utile ad aggiungere l'effetto ombreggiatura intorno al contenitore
+    border-radius: 1vh;                                         //Utile ad arrotondare i bordi del contenitore
+    padding: 30px;
+    text-align: center;
+}

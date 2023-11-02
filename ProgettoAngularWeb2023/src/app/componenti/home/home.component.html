@@ -1,1 +1,33 @@
-<p style="margin-top: 160px; padding: 30px; height: 100vh;">home works!</p>
+<!-- SEZIONE DEDICATA ALLO SHOP LINK E ALLO SFONDO PRINCIPALE -->
+<div class="divPri">
+    <div class="textBackground">
+        <div class="divPriContent">
+            <h2>ESPLORA CATALOGO</h2>
+        </div>
+        <div class="divPriContent">
+            <h3>Cerca il prodotto che desideri tra quelli offerti e acquista ora!</h3>
+        </div>
+        <div class="divPriContent">
+            <button mat-raised-button class="buyNow" color="primary" routerLink="/shop"><mat-icon style="transform: scale(1.5);">shopping_cart</mat-icon>&nbsp; Shop Now</button>
+        </div>
+    </div>
+</div>
+
+<!-- SEZIONE DEDICATA ALLE CATEGORIE DI PRODOTTO -->
+<div class="divSec">
+    <div class="contenitoreDivSec">
+        <div class="bloccoDivSec" *ngFor="let item of immagini" (mouseover)="zoomIn($event)" (mouseout)="zoomOut($event)">
+            <img [src]="item.src" alt="Immagine cliccabile" (mouseover)="mostraTesto(item)" (mouseout)="nascondiTesto(item)"/>
+            <p class="testo" [hidden]="!item.mostraIlTesto">{{item.testo}}</p>
+        </div>
+    </div>
+</div>
+
+
+<!-- SEZIONE DEDICATA ALLA NEWSLETTER -->
+<div class="divTer">
+    <div class="textBackground2">
+        <button mat-button  color="#8e8e8e;"><h2>Clicca qui per iscriverti alla nostra newsletter</h2></button>
+        <p>EquiStore è sponsor ufficiale della nazionale italiana di MG. Iscriviti alla nostra newsletter per rimanere sempre aggiornato sulle competizioni in corso!</p>
+    </div>
+</div>
