@@ -46,6 +46,8 @@ import { AuthService } from './servizi/auth.service';
 import { AccountComponent } from './componenti/account/account.component';
 import { NotLoggedInErrorComponent } from './componenti/not-logged-in-error/not-logged-in-error.component';
 
+//FontAwesome
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -84,7 +86,8 @@ import { NotLoggedInErrorComponent } from './componenti/not-logged-in-error/not-
     MatDialogModule,
     FormsModule,
     ReactiveFormsModule,
-    CommonModule
+    CommonModule,
+    FontAwesomeModule
 
   ],
   providers: [AuthService],

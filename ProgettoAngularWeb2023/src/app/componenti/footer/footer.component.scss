@@ -1,12 +1,60 @@
+
+//GENERAL RULES
 .footer{
     bottom: 0%;
     width: 100%;
     
 }
-
+//SEZIONE PRIMARIA
 .divPri{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     height: 25vh;
 }
+.divPri .item{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.divPri .item .textLogo{
+    color: #8e8e8e;
+    font-family: Poppins;
+    font-size: 8vh;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+}
+.divPri .item .textCorpo{
+    //Padding
+    padding-left: 19vh;
+    padding-right: 10vh;
+    //FontStyle
+    color: #8e8e8e;
+    font-family: Poppins;
+    font-size: 2vh;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+}
+.spacer{
+    margin: 1vh;
+}
+
+.socialIcons{
+    font-size: 4vh;
+    color: #8e8e8e;
+}
+
+.socialIcons fa-icon{
+    margin-right: 2vh;
+    margin-left: 2vh;
+}
+
+//SEZIONE SECONDARIA
 .divSec{
     display: flex;
     justify-content: space-between;
