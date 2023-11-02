@@ -1,1 +1,13 @@
-<p style="margin-top: 160px; padding: 30px; height: 100vh;">shop works!</p>
+<div class="spacer"></div>
+
+<mat-form-field>
+    <mat-label>Mostra:</mat-label>
+    <mat-select [(value)]="selectedCategory">
+      <mat-option [value]="option.value" *ngFor="let option of category">{{ option.viewValue }}</mat-option>
+    </mat-select>
+</mat-form-field>
+
+
+
+
+

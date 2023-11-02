@@ -5,19 +5,19 @@
             <span>EquiStore</span>
         </div>
         <div class="item">
-            <span><button mat-button routerLink="home">Home</button></span>
-            <span><button mat-button routerLink="shop">Shop</button></span>
-            <span><button mat-button routerLink="about">About</button></span>
+            <span><button mat-button routerLink="home" (click)="scroll.scrollToTop()">Home</button></span>
+            <span><button mat-button routerLink="shop" (click)="scroll.scrollToTop()">Shop</button></span>
+            <span><button mat-button routerLink="about" (click)="scroll.scrollToTop()">About</button></span>
         </div>
         <div class="item" *ngIf="!auth.isLoggedIn">
-            <span><button mat-button routerLink="login">Login</button></span>
+            <span><button mat-button routerLink="login" (click)="scroll.scrollToTop()">Login</button></span>
             <span>|</span>
-            <span><button mat-button routerLink="register">Register</button></span>
+            <span><button mat-button routerLink="register" (click)="scroll.scrollToTop()">Register</button></span>
         </div>
         <div class="item" *ngIf="auth.isLoggedIn">
             <span><button mat-button (click)="onLogout()">Logout</button></span>
             <span>|</span>
-            <span><button mat-button routerLink="account">Account</button></span>
+            <span><button mat-button routerLink="account" (click)="scroll.scrollToTop()">Account</button></span>
         </div>
     </mat-toolbar>
 </p>

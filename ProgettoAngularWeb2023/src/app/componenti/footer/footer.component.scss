@@ -3,8 +3,8 @@
 .footer{
     bottom: 0%;
     width: 100%;
-    
 }
+
 //SEZIONE PRIMARIA
 .divPri{
     display: flex;
@@ -44,7 +44,7 @@
     margin: 1vh;
 }
 
-.socialIcons{
+.socialIcons a{
     font-size: 4vh;
     color: #8e8e8e;
 }
@@ -53,6 +53,19 @@
     margin-right: 2vh;
     margin-left: 2vh;
 }
+
+span{
+    font-family: Poppins;
+    font-size: auto;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+}
+//PER SOVRASCRIVERE IL COLORE EREDITATO
+.mat-mdc-button.mat-unthemed{
+    --mdc-text-button-label-text-color: #8e8e8e;
+}
+
 
 //SEZIONE SECONDARIA
 .divSec{
