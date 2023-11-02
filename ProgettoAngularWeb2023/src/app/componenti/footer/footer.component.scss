@@ -1,0 +1,26 @@
+.footer{
+    bottom: 0%;
+    width: 100%;
+    
+}
+
+.divPri{
+    height: 25vh;
+}
+.divSec{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 6vh;
+    background-color: #303030;
+}
+.divSec .item{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.divSec .item .text{
+    color: white;
+}

@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent {
-
+  
+  //Funzione Torna in Cima
+  scrollToTop() {
+    // Scrolla la pagina fino all'inizio
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // Aggiunge un'animazione di scorrimento
+    });
+  }
 }
