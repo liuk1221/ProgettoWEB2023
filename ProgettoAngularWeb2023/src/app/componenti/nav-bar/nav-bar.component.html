@@ -1,1 +1,23 @@
-<p>nav-bar works!</p>
+<p>
+    <mat-toolbar>
+        <div class="item">
+            <span><img src="../../assets/ElementiNavBar/IconaSito.png" alt="Icona del sito"></span>
+            <span>EquiStore</span>
+        </div>
+        <div class="item">
+            <span><button mat-button routerLink="home">Home</button></span>
+            <span><button mat-button routerLink="shop">Shop</button></span>
+            <span><button mat-button routerLink="about">About</button></span>
+        </div>
+        <div class="item" *ngIf="!auth.isLoggedIn">
+            <span><button mat-button routerLink="login">Login</button></span>
+            <span>|</span>
+            <span><button mat-button routerLink="register">Register</button></span>
+        </div>
+        <div class="item" *ngIf="auth.isLoggedIn">
+            <span><button mat-button (click)="onLogout()">Logout</button></span>
+            <span>|</span>
+            <span><button mat-button>Account</button></span>
+        </div>
+    </mat-toolbar>
+</p>

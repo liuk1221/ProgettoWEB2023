@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "ProgettoAngularWeb2023",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

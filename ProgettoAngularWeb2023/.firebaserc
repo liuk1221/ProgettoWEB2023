@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "pwm2023-cfb72": {
+      "hosting": {
+        "ProgettoAngularWeb2023": [
+          "pwm2023-cfb72"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "pwm2023-cfb72"
+  }
+}

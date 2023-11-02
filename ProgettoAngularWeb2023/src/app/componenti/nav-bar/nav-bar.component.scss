@@ -1,0 +1,43 @@
+//Questa sezione è dedicata a centrare i vari DIV delle sottosezioni
+mat-toolbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    //FONTSTYLE
+    background: var(--BG, #F5F5F7);
+    box-shadow: 2px 4px 12px 0px rgba(0, 0, 0, 0.25);
+
+    //Comandi per bloccare la barra in alto e sopra al resto del contenuto
+    position: fixed;                    //Mantiene la barra sempre nello stesso posto
+    top: 0%;
+    width: 100%;
+    z-index: 1000;                      //Mantiene la barra sempre sopra a tutto il resto
+}
+
+
+//Tutta questa sezione è dedicata a centrare il contenuto di ogni DIV
+.item{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+//FONTSTYLE all'interno di tutti gli span.
+span{
+    color: #8e8e8e;
+    font-family: Poppins;
+    font-size: auto;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+}
+
+//Ridimensionamento dell'immagine
+img{
+    width: 67px;
+    height: 68px;
+    flex-shrink: 0;
+}
