@@ -7,6 +7,8 @@ import { NotFoundComponent } from './componenti/not-found/not-found.component';
 import { LoginComponent } from './componenti/login/login.component';
 import { RegisterComponent } from './componenti/register/register.component';
 import { AccountComponent } from './componenti/account/account.component';
+import { authGuard } from './auth/auth.guard';
+import { NotLoggedInErrorComponent } from './componenti/not-logged-in-error/not-logged-in-error.component';
 
 
 //Qui vengono impostate tutte le route. Fondamentali in angular in quanto il tutto è gestito in single-page
@@ -17,6 +19,8 @@ const routes: Routes = [
   {path:'about', component: AboutComponent},
   {path:'login', component: LoginComponent},
   {path:'register', component: RegisterComponent},
+  {path:'account', component: AccountComponent, canActivate: [authGuard]},
+  {path: 'unauthorized', component: NotLoggedInErrorComponent},
   {path: '404', component: NotFoundComponent},
   {path: '**', redirectTo: '/404'}  
 ];

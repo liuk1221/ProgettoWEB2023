@@ -17,7 +17,7 @@
         <div class="item" *ngIf="auth.isLoggedIn">
             <span><button mat-button (click)="onLogout()">Logout</button></span>
             <span>|</span>
-            <span><button mat-button>Account</button></span>
+            <span><button mat-button routerLink="account">Account</button></span>
         </div>
     </mat-toolbar>
 </p>

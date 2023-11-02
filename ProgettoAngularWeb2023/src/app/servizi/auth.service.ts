@@ -110,5 +110,10 @@ export class AuthService {
       this.isAdmin=null;
     }
   });
-}
+  }
+
+  //METODO UTILIZZATO DALLA GUARDIA PER EVITARE DI ATTIVARE ROUTE NON ACCESSIBILI
+  isAuthenticated(){
+    return this.isLoggedIn;
+  }
 }

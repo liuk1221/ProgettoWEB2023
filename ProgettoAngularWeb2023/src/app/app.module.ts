@@ -44,6 +44,7 @@ import { AboutComponent } from './componenti/about/about.component';
 import { NotFoundComponent } from './componenti/not-found/not-found.component';
 import { AuthService } from './servizi/auth.service';
 import { AccountComponent } from './componenti/account/account.component';
+import { NotLoggedInErrorComponent } from './componenti/not-logged-in-error/not-logged-in-error.component';
 
 
 @NgModule({
@@ -58,6 +59,7 @@ import { AccountComponent } from './componenti/account/account.component';
     AboutComponent,
     NotFoundComponent,
     AccountComponent,
+    NotLoggedInErrorComponent,
   ],
   imports: [
     
