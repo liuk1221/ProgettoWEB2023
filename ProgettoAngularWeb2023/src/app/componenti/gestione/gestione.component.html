@@ -1,3 +1,23 @@
 <div class="spacer"></div>
 
-<p>gestione works!</p>
+<!-- FORM AGGIUNTA PRODOTTI AL DB -->
+<form [formGroup]="productform" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+      <mat-label>Nome</mat-label>
+      <input matInput type="text" name="nome" formControlName="nome"/>
+    </mat-form-field>
+    <p *ngIf="!productform.get('nome')!.valid && productform.get('nome')!.touched">Inserisci un nome valido!</p> <!-- Il punto esclamativo assicura che non sia NULL, occhio a dove viene messo-->
+    <mat-form-field appearance="fill" >
+      <mat-label>Quantita</mat-label>
+      <input matInput type="number" name="quantita" formControlName="quantita"/>
+    </mat-form-field>
+    <p *ngIf="!productform.get('quantita')!.valid && productform.get('quantita')!.touched">Inserisci una quantità valida!</p>
+    <mat-form-field appearance="fill">
+      <mat-label>Categoria</mat-label>
+      <mat-select name="categoria" formControlName="categoria" [(value)]="selectedCategory">
+        <mat-option [value]="option.value" *ngFor="let option of categorys">{{ option.viewValue }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <p *ngIf="!productform.get('categoria')!.valid && productform.get('categoria')!.touched">Inserisci una categoria valida!</p>
+    <button mat-raised-button color="#8e8e8e" type="submit" [disabled]="!productform.valid">Invia</button> <!-- Il punto esclamativo serve ad invertire il controllo -->
+  </form>

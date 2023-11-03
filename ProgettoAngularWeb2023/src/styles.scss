@@ -32,3 +32,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .mat-typography{
     --mdc-filled-text-field-focus-active-indicator-color: #8e8e8e !important;
 }
+
+//FontStyle bottoni
+.mat-mdc-button:not(:disabled) {
+    color: #8e8e8e !important;
+    font-size: auto !important;
+    font-style: normal !important;
+    font-weight: bold !important;
+    line-height: normal !important;
+  }

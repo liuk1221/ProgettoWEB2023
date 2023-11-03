@@ -1,10 +1,6 @@
 import {Component} from '@angular/core';
+import { Category } from 'src/app/modelli/category';
 
-//Interfaccia per le categorie
-interface Category{
-  value: String;
-  viewValue: String;
-}
 
 @Component({
   selector: 'app-shop',

@@ -12,9 +12,9 @@ export class DataService {
   //Aggiungi Prodotto
   addProduct(prodotto: Prodotti){
     prodotto.id = this.afs.createId();                                                                   //Crea un ID univoco per quel determinato prodotto.
-    return this.afs.collection('/Prodotti/'+prodotto.category).add(prodotto);                            //Aggiunge nella tab prodotti/cat il prodotto
+    return this.afs.collection('/Prodotti').add(prodotto);                                              //Aggiunge nella tab prodotti/cat il prodotto
   }
-
+  ///'+prodotto.category
   //Get di tutti gli studenti
   getAllProduct(){
     return this.afs.collection('/Prodotti').snapshotChanges();

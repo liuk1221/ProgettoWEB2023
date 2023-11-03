@@ -1,6 +1,6 @@
 export interface Prodotti {
     id: string,
-    category: string,
+    category: string;
     nome: string;
     qta: Number;
 }
