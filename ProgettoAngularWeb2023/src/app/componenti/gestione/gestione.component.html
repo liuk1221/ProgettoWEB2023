@@ -1,6 +1,7 @@
 <div class="spacer"></div>
 
 <div class="generalDiv">
+
   <div class="flexBox">
     <div class="flexBoxItem">
       <span>Inserire nel form sottostante il prodotto da aggingere al catalogo: </span>
@@ -30,4 +31,38 @@
       <button mat-raised-button color="#8e8e8e" type="submit" [disabled]="!productform.valid">Invia</button> <!-- Il punto esclamativo serve ad invertire il controllo -->
     </form>
   </div>
+
+  <!-- TABELLA DI VISUALIZZAZIONE PRODOTTI INSERITI NEL DB-->
+  <div class="tableView">
+    <div class="col-md-8 mt-2">
+      <h5 class="font" style="font-size: 3vh; text-align: center;">Product List</h5>
+      <div class="card p-3 shadow">
+        <div class="card-body">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col" class="font" style="font-size: 2vh; color:black !important;">Nome</th>
+                <th scope="col" class="font" style="font-size: 2vh; color:black !important;">Categoria</th>
+                <th scope="col" class="font" style="font-size: 2vh; color:black !important;">Quantità</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let prodotto of listaProdotti">
+                <td class="font">{{prodotto.nome}}</td>
+                <td class="font">{{prodotto.category}}</td>
+                <td class="font">{{prodotto.qta}}</td>
+                <td>
+                  <button class="btn btn-outline-danger" (click)="delProduct(prodotto)">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+
+
 </div>

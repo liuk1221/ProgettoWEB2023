@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Category } from 'src/app/modelli/category';
 import { Prodotti } from 'src/app/modelli/prodotti';
@@ -11,7 +11,7 @@ import { DataService } from 'src/app/servizi/data.service';
   templateUrl: './gestione.component.html',
   styleUrls: ['./gestione.component.scss']
 })
-export class GestioneComponent {
+export class GestioneComponent implements OnInit{
 
   listaProdotti: Prodotti[] = [];
   oggettoProdotto: Prodotti = {
@@ -27,6 +27,16 @@ export class GestioneComponent {
 
   constructor(private auth : AuthService, private data : DataService){}
 
+
+  //OnInit
+  ngOnInit(): void {
+    this.productform = new FormGroup({
+      nome: new FormControl(null, Validators.required), //Tra le parentesi posso anche aggiungere un valore iniziale e i validatori
+      categoria: new FormControl(null, [Validators.required]),
+      quantita: new FormControl(null, [Validators.required])
+    });
+    this.getAllProducts();
+  }
 
   //MetodiImplementativi
   getAllProducts(){
@@ -67,13 +77,7 @@ export class GestioneComponent {
   productform!: FormGroup //Creaiamo un gruppo di controlli. Ogni campo di un form è detto form control. Tanti form control fanno un form group.
   
 
-  ngOnInit(): void {
-    this.productform = new FormGroup({
-      nome: new FormControl(null, Validators.required), //Tra le parentesi posso anche aggiungere un valore iniziale e i validatori
-      categoria: new FormControl(null, [Validators.required]),
-      quantita: new FormControl(null, [Validators.required])
-    });
-  }
+
 
   onSubmit(){
     //Log di quello che è stato inviato al DB
@@ -98,7 +102,6 @@ export class GestioneComponent {
 
   //CATEGORIE FORM
   categorys: Category[] = [
-    {value: 'tutto', viewValue: 'Tutto'},
     {value: 'selle', viewValue: 'Selle'},
     {value: 'sottopancia', viewValue: 'Sottopancia'},
     {value: 'sottosella', viewValue: 'Sottosella'},
@@ -111,4 +114,9 @@ export class GestioneComponent {
     {value: 'cap', viewValue: 'Cap'}
   ];
   selectedCategory = this.categorys[0].value;                                //Inizializza la variabile per il two-way binding al valore "tutto"
+
+
+
+  //TABELLA e GESTIONE
+
 }

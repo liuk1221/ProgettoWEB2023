@@ -31,5 +31,26 @@
 }
 
 .generalDiv{
-    height: 100vh;
+    min-height: 100vh;
+}
+
+//-------------------------------------------------
+
+.tableView{
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+
+.tableView col-md-8 mt-2{
+    text-align: center;
+}
+
+.font{
+    color: #8e8e8e;
+    font-family: Poppins;
+    font-size: auto;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
 }
