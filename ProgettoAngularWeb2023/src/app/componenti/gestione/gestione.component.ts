@@ -48,6 +48,7 @@ export class GestioneComponent {
     this.oggettoProdotto.qta = this.qta
 
     this.data.addProduct(this.oggettoProdotto);
+    alert('Il prodotto è stato inserito con successo!')
   }
 
   updateProduct(){
@@ -90,6 +91,9 @@ export class GestioneComponent {
 
     //Aggiunge il prodotto al DB
     this.addProduct();
+
+    // Dopo aver processato il form, reimposta il form ai valori iniziali
+    this.productform.reset(); // reimposta il form vuoto
   }
 
   //CATEGORIE FORM

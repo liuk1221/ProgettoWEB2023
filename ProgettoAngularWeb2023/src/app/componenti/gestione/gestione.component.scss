@@ -1,3 +1,35 @@
 .spacer{
     height: 10vh;
 }
+
+.productForm{
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+
+.productForm form {
+    text-align: center; 
+}
+
+.flexBox{
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+
+.flexBoxItem{
+    text-align: center; 
+}
+.flexBoxItem span{
+    color: #8e8e8e;
+    font-family: Poppins;
+    font-size: auto;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+}
+
+.generalDiv{
+    height: 100vh;
+}

@@ -1,9 +1,12 @@
 <div class="spacer"></div>
 
-<!-- BOTTONE CHE SERVE AD ACCEDERE AL COMPONENTE DI GESTIONE DEL FIRESTORE, VISIBILE SOLO ALL'ADMIN -->
-<div class="bottoneGestione" *ngIf="auth.isAdministrator()">
-    <div class="center-container">
-        <button mat-button routerLink="/gestione">GESTISCI</button>
+<div class="generalDiv">
+    <!-- BOTTONE CHE SERVE AD ACCEDERE AL COMPONENTE DI GESTIONE DEL FIRESTORE, VISIBILE SOLO ALL'ADMIN -->
+    <div class="bottoneGestione" *ngIf="auth.isAdministrator()">
+        <div class="center-container">
+            <button mat-button routerLink="/gestione">GESTISCI PRODOTTI</button>
+        </div>
     </div>
 </div>
+
 
