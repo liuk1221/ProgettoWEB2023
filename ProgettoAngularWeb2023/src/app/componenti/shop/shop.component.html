@@ -1,11 +1,18 @@
 <div class="spacer"></div>
+<div class="select">
+    <mat-form-field>
+        <mat-label>Mostra:</mat-label>
+        <mat-select [(value)]="selectedCategory">
+          <mat-option [value]="option.value" *ngFor="let option of category">{{ option.viewValue }}</mat-option>
+        </mat-select>
+    </mat-form-field>  
+</div>
 
-<mat-form-field>
-    <mat-label>Mostra:</mat-label>
-    <mat-select [(value)]="selectedCategory">
-      <mat-option [value]="option.value" *ngFor="let option of category">{{ option.viewValue }}</mat-option>
-    </mat-select>
-</mat-form-field>
+<!-- <button mat-button (click)="ritornaSelected()">AGGIORNA CONSOLE</button> -->
+
+<!-- TEMPORANEO SOLO PER MANDARE IL FOOTER IN BASSO -->
+<div style="height: 100vh;"></div>
+
 
 
 

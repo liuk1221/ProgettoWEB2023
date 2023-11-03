@@ -48,6 +48,7 @@ import { NotLoggedInErrorComponent } from './componenti/not-logged-in-error/not-
 
 //FontAwesome
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { GestioneComponent } from './componenti/gestione/gestione.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     NotFoundComponent,
     AccountComponent,
     NotLoggedInErrorComponent,
+    GestioneComponent,
   ],
   imports: [
     

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from 'src/app/servizi/auth.service';
 
 @Component({
   selector: 'app-account',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AccountComponent {
 
+  constructor(public auth : AuthService){}
+
+  
 }

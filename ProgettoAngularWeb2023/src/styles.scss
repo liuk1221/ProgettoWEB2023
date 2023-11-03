@@ -3,3 +3,32 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+
+//STYLE MOD PER SELECT -----
+
+//Checkbox della select
+.mat-primary .mat-pseudo-checkbox-checked.mat-pseudo-checkbox-minimal::after{
+    color: #8e8e8e;
+}
+
+//Elemento selezionato
+.mat-mdc-option.mdc-list-item--selected:not(.mdc-list-item--disabled) .mdc-list-item__primary-text {
+    color: #8e8e8e !important;
+}
+
+//Freccia dela select
+.mat-mdc-form-field.mat-focused .mat-mdc-select-arrow {
+    color: #8e8e8e !important;
+}
+
+//Colore della label
+.mdc-text-field--filled:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-floating-label, .mdc-text-field--filled:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-floating-label--float-above {
+    color: #8e8e8e !important;
+  }
+
+//Colore Barra Highlight
+.mat-typography{
+    --mdc-filled-text-field-focus-active-indicator-color: #8e8e8e !important;
+}

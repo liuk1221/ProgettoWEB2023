@@ -1,1 +1,6 @@
-<p style="margin-top: 160px; padding: 30px; height: 100vh;">account works!</p>
+<div class="spacer"></div>
+
+<!-- BOTTONE CHE SERVE AD ACCEDERE AL COMPONENTE DI GESTIONE DEL FIRESTORE, VISIBILE SOLO ALL'ADMIN -->
+<div *ngIf="auth.isAdministrator()">
+    <button mat-button routerLink="/gestione">GESTISCI</button>
+</div>

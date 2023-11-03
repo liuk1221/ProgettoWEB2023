@@ -116,4 +116,8 @@ export class AuthService {
   isAuthenticated(){
     return this.isLoggedIn;
   }
+
+  isAdministrator(){
+    return this.isAdmin;
+  }
 }

@@ -15,7 +15,7 @@ interface Category{
 export class ShopComponent {
 
   category: Category[] = [
-    {value: 'all', viewValue: 'Tutto'},
+    {value: 'tutto', viewValue: 'Tutto'},
     {value: 'selle', viewValue: 'Selle'},
     {value: 'sottopancia', viewValue: 'Sottopancia'},
     {value: 'sottosella', viewValue: 'Sottosella'},
@@ -27,8 +27,11 @@ export class ShopComponent {
     {value: 'protezioni', viewValue: 'Protezioni'},
     {value: 'cap', viewValue: 'Cap'}
   ];
-  selectedCategory = this.category[0].value;
+  selectedCategory = this.category[0].value;                                //Inizializza la variabile per il two-way binding al valore "tutto"
 
 
-
+  //MetodoDIVerifica - DEPRECATED
+  ritornaSelected(){
+    console.log(this.selectedCategory);
+  }
 }
