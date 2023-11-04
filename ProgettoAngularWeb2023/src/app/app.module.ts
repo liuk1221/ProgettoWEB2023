@@ -34,8 +34,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from "@angular/material/radio";
 import { MatInputModule } from "@angular/material/input";
 import { MatDialogModule } from "@angular/material/dialog";
-import {MatTableModule} from '@angular/material/table';
-import {MatPaginatorModule} from '@angular/material/paginator'; 
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator'; 
 
 //FormsModule
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';

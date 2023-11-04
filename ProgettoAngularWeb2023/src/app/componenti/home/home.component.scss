@@ -52,7 +52,7 @@
     // border-top: 0.5px solid #8e8e8e;                        //Idea bordo sopra e sotto al contenitore -Deprecated-
     // border-bottom: 0.5px solid #8e8e8e;
 
-    height: 100vh;
+    min-height: 100vh;
     flex-direction: row;
     box-shadow: 2px 4px 12px 0px rgba(0, 0, 0, 0.25);         //Utile ad aggiungere l'effetto ombreggiatura intorno al contenitore
 
@@ -66,8 +66,8 @@
   }
   
   .bloccoDivSec {
-    width: 40vh;                                                //Larghezza del blocco quadrato
-    height: 40vh;                                               //Altezza del blocco quadrato
+    width: 35vh;                                                //Larghezza del blocco quadrato
+    height: 35vh;                                               //Altezza del blocco quadrato
     background-color: #8e8e8e;                                //Cambia il colore di sfondo, anche se sarà poi coperto da immagine
     margin: 10px;                                               //Utile ad aggiungere un margine tra i blocchi
     box-shadow: 2px 4px 12px 0px rgba(0, 0, 0, 0.25);         //Utile ad aggiungere l'effetto ombreggiatura intorno al contenitore

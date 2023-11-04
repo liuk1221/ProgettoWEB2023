@@ -7,14 +7,14 @@ import { Prodotti } from '../modelli/prodotti';
 })
 export class DataService {
 
-  constructor(private afs : AngularFirestore) { }           //Iniezione di FireStore nel servizio
+  constructor(private afs : AngularFirestore) {}                                                         //Iniezione di FireStore nel servizio
 
   //Aggiungi Prodotto
   addProduct(prodotto: Prodotti){
     prodotto.id = this.afs.createId();                                                                   //Crea un ID univoco per quel determinato prodotto.
-    return this.afs.collection('/Prodotti').add(prodotto);                                              //Aggiunge nella tab prodotti/cat il prodotto
+    return this.afs.collection('/Prodotti').add(prodotto);                                               //Aggiunge nella tab prodotti/cat il prodotto
   }
-  ///'+prodotto.category
+  // "/'+prodotto.category"
   //Get di tutti gli studenti
   getAllProduct(){
     return this.afs.collection('/Prodotti').snapshotChanges();

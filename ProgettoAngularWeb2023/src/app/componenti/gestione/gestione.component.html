@@ -35,7 +35,7 @@
   <!-- TABELLA DI VISUALIZZAZIONE PRODOTTI INSERITI NEL DB-->
   <div class="tableView">
     <div class="col-md-8 mt-2">
-      <h5 class="font" style="font-size: 3vh; text-align: center;">Product List</h5>
+      <h5 class="font" style="font-size: 3vh; text-align: center;">Lista Prodotti</h5>
       <div class="card p-3 shadow">
         <div class="card-body">
           <table class="table table-hover">
@@ -44,6 +44,7 @@
                 <th scope="col" class="font" style="font-size: 2vh; color:black !important;">Nome</th>
                 <th scope="col" class="font" style="font-size: 2vh; color:black !important;">Categoria</th>
                 <th scope="col" class="font" style="font-size: 2vh; color:black !important;">Quantità</th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
@@ -52,7 +53,7 @@
                 <td class="font">{{prodotto.category}}</td>
                 <td class="font">{{prodotto.qta}}</td>
                 <td>
-                  <button class="btn btn-outline-danger" (click)="delProduct(prodotto)">Delete</button>
+                  <button class="btn btn-outline-danger" (click)="delProduct(prodotto)">Elimina</button>
                 </td>
               </tr>
             </tbody>

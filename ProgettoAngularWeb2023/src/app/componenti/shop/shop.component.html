@@ -8,7 +8,54 @@
     </mat-form-field>  
 </div>
 
-<!-- <button mat-button (click)="ritornaSelected()">AGGIORNA CONSOLE</button> -->
+<!-- BOTTONE DI TEST -->
+<button mat-button (click)="ritornaSelected()">AGGIORNA CONSOLE</button>
+
+<div class="sezioneAcquisto">
+  <div class="contenitoreAcquisto" *ngIf="selectedCategory=='tutto'">
+    <mat-card class="shopping-card" *ngFor="let prodotto of listaProdotti">
+      <mat-card-header>
+        <mat-card-title>{{prodotto.nome}}</mat-card-title>
+        <mat-card-subtitle>{{prodotto.category}}</mat-card-subtitle>
+      </mat-card-header>
+      <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Foto del prodotto"> -->
+      <div class="bloccoFoto">
+      
+      </div>
+      <mat-card-content>
+        <p>
+          Quantità disponibile: {{prodotto.qta}}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>ACQUISTA</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  <div class="contenitoreAcquisto" *ngIf="selectedCategory!='tutto'">
+    <mat-card class="shopping-card" *ngFor="let prodotto of listaProdottiFiltrati">
+      <mat-card-header>
+        <mat-card-title>{{prodotto.nome}}</mat-card-title>
+        <mat-card-subtitle>{{prodotto.category}}</mat-card-subtitle>
+      </mat-card-header>
+      <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Foto del prodotto"> -->
+      <div class="bloccoFoto">
+      
+      </div>
+      <mat-card-content>
+        <p>
+          Quantità disponibile: {{prodotto.qta}}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>ACQUISTA</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+
+
+
 
 <!-- TEMPORANEO SOLO PER MANDARE IL FOOTER IN BASSO -->
 <div style="height: 100vh;"></div>
