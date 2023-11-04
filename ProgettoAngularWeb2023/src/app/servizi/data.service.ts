@@ -17,8 +17,15 @@ export class DataService {
   // "/'+prodotto.category"
   //Get di tutti gli studenti
   getAllProduct(){
-    return this.afs.collection('/Prodotti').snapshotChanges();
+    return this.afs.collection('/Prodotti').snapshotChanges();                                            //Tipo valueChanges ma consente anche dei controlli più specifici sul monitoraggio dei dati
   }
+
+  //Metodo per prendere i dati di un prodotto dato il suo id.
+  //Utilizzato principalmente nel componente di acquisto.
+  getProductById(productId: string) {
+    return this.afs.doc('/Prodotti/' + productId).valueChanges();                                         //Con valueChanges posso controllare in tempo reale il database. Più semplice di snapshotChanges
+  }
+
 
   //Cancellazione Prodotto
   delProduct(prodotto: Prodotti){

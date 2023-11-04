@@ -23,7 +23,7 @@ export class GestioneComponent implements OnInit{
 
   category: string = '';
   nome: string = '';
-  qta: Number = 0;
+  qta: number = 0;
 
   constructor(private auth : AuthService, private data : DataService){}
 

@@ -51,6 +51,7 @@ import { NotLoggedInErrorComponent } from './componenti/not-logged-in-error/not-
 //FontAwesome
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { GestioneComponent } from './componenti/gestione/gestione.component';
+import { AcquistoComponent } from './componenti/acquisto/acquisto.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +67,7 @@ import { GestioneComponent } from './componenti/gestione/gestione.component';
     AccountComponent,
     NotLoggedInErrorComponent,
     GestioneComponent,
+    AcquistoComponent,
   ],
   imports: [
     

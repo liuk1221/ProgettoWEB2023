@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Category } from 'src/app/modelli/category';
 import { Prodotti } from 'src/app/modelli/prodotti';
 import { AuthService } from 'src/app/servizi/auth.service';
+import { BuyService } from 'src/app/servizi/buy.service';
 import { DataService } from 'src/app/servizi/data.service';
 import { ScrollToTopService } from 'src/app/servizi/scroll-to-top.service';
 
@@ -16,7 +17,7 @@ import { ScrollToTopService } from 'src/app/servizi/scroll-to-top.service';
 export class ShopComponent implements OnInit, DoCheck{
   //-----------------------------------------------------------------------------------------------------------------
   //Costruttore
-  constructor(private auth : AuthService, private data : DataService, private router: Router, private scroll : ScrollToTopService){} //Iniezioni generali
+  constructor(private auth : AuthService, private data : DataService, private router: Router, private scroll : ScrollToTopService, private buy : BuyService){} //Iniezioni generali
 
   //-----------------------------------------------------------------------------------------------------------------
   //Dichiarazione Array e Variabili
@@ -94,5 +95,11 @@ export class ShopComponent implements OnInit, DoCheck{
   //Metodo per l'aggiornamento dell'indirizzo a seconda del filtro applicato.
   selezionaCategoria(){
     this.router.navigate(['/shop', this.selectedCategory]);
+  }
+
+
+  //Metodo per l'invio dell'ID dell'oggetto selezionato al componente shopNow attraverso il servizio Buy
+  inviaDati(d: string){
+    this.buy.idAcquisto = d;
   }
 }
