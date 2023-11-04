@@ -1,8 +1,10 @@
 import {Component, DoCheck, OnInit} from '@angular/core';
+import { Router } from '@angular/router';
 import { Category } from 'src/app/modelli/category';
 import { Prodotti } from 'src/app/modelli/prodotti';
 import { AuthService } from 'src/app/servizi/auth.service';
 import { DataService } from 'src/app/servizi/data.service';
+import { ScrollToTopService } from 'src/app/servizi/scroll-to-top.service';
 
 
 @Component({
@@ -12,7 +14,12 @@ import { DataService } from 'src/app/servizi/data.service';
 })
 
 export class ShopComponent implements OnInit, DoCheck{
+  //-----------------------------------------------------------------------------------------------------------------
+  //Costruttore
+  constructor(private auth : AuthService, private data : DataService, private router: Router, private scroll : ScrollToTopService){} //Iniezioni generali
 
+  //-----------------------------------------------------------------------------------------------------------------
+  //Dichiarazione Array e Variabili
   category: Category[] = [
     {value: 'tutto', viewValue: 'Tutto'},
     {value: 'selle', viewValue: 'Selle'},
@@ -27,20 +34,21 @@ export class ShopComponent implements OnInit, DoCheck{
     {value: 'cap', viewValue: 'Cap'}
   ];
   selectedCategory = this.category[0].value                                //Inizializza la variabile per il two-way binding al valore "tutto"
-
-
-  //MetodoDIVerifica - DEPRECATED
-  ritornaSelected(){
-    console.log(this.selectedCategory);
-    console.log(this.listaProdotti);
-    console.log(this.listaProdottiFiltrati);
-  }
-
+  urlCorrente: string
   listaProdotti: Prodotti[] = [];
   listaProdottiFiltrati: Prodotti[] = [];
 
-  constructor(private auth : AuthService, private data : DataService){}
-  
+
+
+  //MetodoDIVerifica - DEPRECATED
+  // ritornaSelected(){
+  //   console.log(this.selectedCategory);
+  //   console.log(this.listaProdotti);
+  //   console.log(this.listaProdottiFiltrati);
+  // }
+
+  //-----------------------------------------------------------------------------------------------------------------
+  //GESTIONE CICLO DI VITA DEL COMPONENTE
   //Viene lanciato ogni volta che vengono rilevati dei cambiamenti
   ngDoCheck(): void {
     this.filtraProdotti();                                              //Aggiorna l'array dei prodottiFIltrati
@@ -49,10 +57,18 @@ export class ShopComponent implements OnInit, DoCheck{
   //Viene lanciato all'avvio del componente
   ngOnInit(): void {
     this.getAllProducts();
+    this.scroll.scrollToTop();
+
+    //Lettura URL e aggiornamento selected category
+    //Questa sezione è necessaria a far si che i link alle categorie della HomePage siano funzionanti
+    this.urlCorrente = this.router.url;
+    const urlParts = this.urlCorrente.split('/');
+    const ultimaParte = urlParts[urlParts.length - 1];
+    this.selectedCategory = ultimaParte;
   }
 
-  //MetodiImplementativi
-
+  //-----------------------------------------------------------------------------------------------------------------
+  //METODI
   //Ottieni tutti i prodotti dal db
   getAllProducts(){
     this.data.getAllProduct().subscribe(res => {
@@ -72,5 +88,11 @@ export class ShopComponent implements OnInit, DoCheck{
     this.listaProdottiFiltrati = this.listaProdotti.filter(Object =>{
       return Object.category === this.selectedCategory.toString()
     })
+  }
+
+
+  //Metodo per l'aggiornamento dell'indirizzo a seconda del filtro applicato.
+  selezionaCategoria(){
+    this.router.navigate(['/shop', this.selectedCategory]);
   }
 }

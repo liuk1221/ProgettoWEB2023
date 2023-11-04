@@ -18,6 +18,7 @@ const routes: Routes = [
   {path:'', component: HomeComponent},
   {path:'home', component: HomeComponent},
   {path:'shop', component: ShopComponent},
+  {path: 'shop/:category', component: ShopComponent },
   {path:'about', component: AboutComponent},
   {path:'login', component: LoginComponent},
   {path:'register', component: RegisterComponent},

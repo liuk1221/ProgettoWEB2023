@@ -2,14 +2,14 @@
 <div class="select">
     <mat-form-field>
         <mat-label>Mostra:</mat-label>
-        <mat-select [(value)]="selectedCategory">
+        <mat-select [(value)]="selectedCategory" (selectionChange)="selezionaCategoria()">
           <mat-option [value]="option.value" *ngFor="let option of category">{{ option.viewValue }}</mat-option>
         </mat-select>
     </mat-form-field>  
 </div>
 
 <!-- BOTTONE DI TEST -->
-<button mat-button (click)="ritornaSelected()">AGGIORNA CONSOLE</button>
+<!-- <button mat-button (click)="ritornaSelected()">AGGIORNA CONSOLE</button> -->
 
 <div class="sezioneAcquisto">
   <div class="contenitoreAcquisto" *ngIf="selectedCategory=='tutto'">

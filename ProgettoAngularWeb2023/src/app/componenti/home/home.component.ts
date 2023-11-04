@@ -1,22 +1,25 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent {
+export class HomeComponent{
+  
+
+
   immagini = [
-    {src: '../../../assets/HomePageImages/DivSecCategorie/selle.png', testo: 'SELLE', mostraIlTesto: false },
-    {src: '../../../assets/HomePageImages/DivSecCategorie/sottopancia.jpg', testo: 'SOTTOPANCIA', mostraIlTesto: false },
-    {src: '../../../assets/HomePageImages/DivSecCategorie/sottosella.jpg', testo: 'SOTTOSELLA', mostraIlTesto: false },
-    {src: '../../../assets/HomePageImages/DivSecCategorie/pettorali.jpg', testo: 'PETTORALI', mostraIlTesto: false },
-    {src: '../../../assets/HomePageImages/DivSecCategorie/testiere.jpg', testo: 'TESTIERE', mostraIlTesto: false },
-    {src: '../../../assets/HomePageImages/DivSecCategorie/redini.jpg', testo: 'REDINI', mostraIlTesto: false },
-    {src: '../../../assets/HomePageImages/DivSecCategorie/staffili.jpg', testo: 'STAFFILI', mostraIlTesto: false },
-    {src: '../../../assets/HomePageImages/DivSecCategorie/staffe.jpg', testo: 'STAFFE', mostraIlTesto: false },
-    {src: '../../../assets/HomePageImages/DivSecCategorie/protezioni.png', testo: 'PROTEZIONI', mostraIlTesto: false },
-    {src: '../../../assets/HomePageImages/DivSecCategorie/cap.jpg', testo: 'CAP', mostraIlTesto: false }
+    {src: '../../../assets/HomePageImages/DivSecCategorie/selle.png', testo: 'SELLE', mostraIlTesto: false, value: "selle" },
+    {src: '../../../assets/HomePageImages/DivSecCategorie/sottopancia.jpg', testo: 'SOTTOPANCIA', mostraIlTesto: false, value: "sottopancia"  },
+    {src: '../../../assets/HomePageImages/DivSecCategorie/sottosella.jpg', testo: 'SOTTOSELLA', mostraIlTesto: false, value: "sottosella"  },
+    {src: '../../../assets/HomePageImages/DivSecCategorie/pettorali.jpg', testo: 'PETTORALI', mostraIlTesto: false, value: "pettorali"  },
+    {src: '../../../assets/HomePageImages/DivSecCategorie/testiere.jpg', testo: 'TESTIERE', mostraIlTesto: false, value: "testiere"  },
+    {src: '../../../assets/HomePageImages/DivSecCategorie/redini.jpg', testo: 'REDINI', mostraIlTesto: false, value: "redini"  },
+    {src: '../../../assets/HomePageImages/DivSecCategorie/staffili.jpg', testo: 'STAFFILI', mostraIlTesto: false, value: "staffili"  },
+    {src: '../../../assets/HomePageImages/DivSecCategorie/staffe.jpg', testo: 'STAFFE', mostraIlTesto: false, value: "staffe"  },
+    {src: '../../../assets/HomePageImages/DivSecCategorie/protezioni.png', testo: 'PROTEZIONI', mostraIlTesto: false, value: "protezioni"  },
+    {src: '../../../assets/HomePageImages/DivSecCategorie/cap.jpg', testo: 'CAP', mostraIlTesto: false, value: "cap"  }
   ]
 
 

@@ -17,8 +17,10 @@
 <div class="divSec">
     <div class="contenitoreDivSec">
         <div class="bloccoDivSec" *ngFor="let item of immagini" (mouseover)="zoomIn($event)" (mouseout)="zoomOut($event)">
+            <a [routerLink]="['/shop', item.value]">
             <img [src]="item.src" alt="Immagine cliccabile" (mouseover)="mostraTesto(item)" (mouseout)="nascondiTesto(item)"/>
             <p class="testo" [hidden]="!item.mostraIlTesto">{{item.testo}}</p>
+            </a>
         </div>
     </div>
 </div>
