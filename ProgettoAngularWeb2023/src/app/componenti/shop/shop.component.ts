@@ -5,6 +5,7 @@ import { Prodotti } from 'src/app/modelli/prodotti';
 import { AuthService } from 'src/app/servizi/auth.service';
 import { BuyService } from 'src/app/servizi/buy.service';
 import { DataService } from 'src/app/servizi/data.service';
+import { FotoService } from 'src/app/servizi/foto.service';
 import { ScrollToTopService } from 'src/app/servizi/scroll-to-top.service';
 
 
@@ -17,7 +18,7 @@ import { ScrollToTopService } from 'src/app/servizi/scroll-to-top.service';
 export class ShopComponent implements OnInit, DoCheck{
   //-----------------------------------------------------------------------------------------------------------------
   //Costruttore
-  constructor(private auth : AuthService, private data : DataService, private router: Router, private scroll : ScrollToTopService, private buy : BuyService){} //Iniezioni generali
+  constructor(private auth : AuthService, private data : DataService, private router: Router, private scroll : ScrollToTopService, private buy : BuyService, private foto : FotoService){} //Iniezioni generali
 
   //-----------------------------------------------------------------------------------------------------------------
   //Dichiarazione Array e Variabili
@@ -101,5 +102,10 @@ export class ShopComponent implements OnInit, DoCheck{
   //Metodo per l'invio dell'ID dell'oggetto selezionato al componente shopNow attraverso il servizio Buy
   inviaDati(d: string){
     this.buy.idAcquisto = d;
+  }
+
+  //Per Ottenere il percorso del servizio delle foto
+  getPercorso(nome : string){
+    return this.foto.getPercorso(nome)
   }
 }

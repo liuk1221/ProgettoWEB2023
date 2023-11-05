@@ -19,6 +19,11 @@
     box-shadow: 2px 4px 12px 0px rgba(0, 0, 0, 0.25);         //Utile ad aggiungere l'effetto ombreggiatura intorno al contenitore
     padding: 1vh;
 }
+.bloccoFoto img{
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+}
 
 .shopping-card{
     max-width: 38vh;
