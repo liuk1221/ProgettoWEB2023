@@ -25,6 +25,9 @@ export class GestioneComponent implements OnInit{
   nome: string = '';
   qta: number = 0;
 
+  //GESTIONE DEL FORM
+  productform!: FormGroup //Creaiamo un gruppo di controlli. Ogni campo di un form è detto form control. Tanti form control fanno un form group.
+
   constructor(private auth : AuthService, private data : DataService){}
 
 
@@ -61,9 +64,6 @@ export class GestioneComponent implements OnInit{
     alert('Il prodotto è stato inserito con successo!')
   }
 
-  updateProduct(){
-
-  }
 
   delProduct(prodotto : Prodotti){
     if(window.confirm('Sei sicuro di voler eliminare il prodotto: '+prodotto.nome+' ?'))
@@ -73,8 +73,6 @@ export class GestioneComponent implements OnInit{
 
 
 
-  //GESTIONE DEL FORM
-  productform!: FormGroup //Creaiamo un gruppo di controlli. Ogni campo di un form è detto form control. Tanti form control fanno un form group.
   
 
 

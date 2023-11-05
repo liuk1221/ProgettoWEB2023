@@ -2,3 +2,14 @@
 
 <!-- IMPLEMENTARE IL FORM PER LA QUANTITA DA ACQUISTARE. INVIARE I DATI AL SERVIZIO ORDINI, CHE LI INSERISCE E ELIMINARE LA QUANTITA SELEZIONATA DAL PRODOTTO ACQUISTATATO.
 RICORDARSI DI IMPLEMENARE UN ALERT IN CASO LA QUANTITA' RICHIESTA SUPERI QUELLA DISPONIBILE. -->
+
+<div class="productForm">
+    <form [formGroup]="productform" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="fill" >
+        <mat-label>Quantita</mat-label>
+        <input matInput type="number" name="quantita" formControlName="quantita"/>
+      </mat-form-field>
+      <p *ngIf="!productform.get('quantita')!.valid && productform.get('quantita')!.touched">Inserisci una quantità valida!</p>
+      <button mat-raised-button color="#8e8e8e" type="submit" [disabled]="!productform.valid">Invia</button> <!-- Il punto esclamativo serve ad invertire il controllo -->
+    </form>
+  </div>
