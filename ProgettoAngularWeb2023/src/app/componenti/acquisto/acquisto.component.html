@@ -1,4 +1,5 @@
-<p style="margin-top: 150px;">Stai tentando di acquistare {{nome}} con ID: {{id}}. L'oggeto è disponibile in quantità: {{qnt}}.</p>
+<div class="mainDiv">
+  <p>Stai tentando di acquistare {{nome}} con ID: {{id}}. L'oggeto è disponibile in quantità: {{qnt}}.</p>
 
 <!-- IMPLEMENTARE IL FORM PER LA QUANTITA DA ACQUISTARE. INVIARE I DATI AL SERVIZIO ORDINI, CHE LI INSERISCE E ELIMINARE LA QUANTITA SELEZIONATA DAL PRODOTTO ACQUISTATATO.
 RICORDARSI DI IMPLEMENARE UN ALERT IN CASO LA QUANTITA' RICHIESTA SUPERI QUELLA DISPONIBILE. -->
@@ -12,4 +13,6 @@ RICORDARSI DI IMPLEMENARE UN ALERT IN CASO LA QUANTITA' RICHIESTA SUPERI QUELLA 
       <p *ngIf="!productform.get('quantita')!.valid && productform.get('quantita')!.touched">Inserisci una quantità valida!</p>
       <button mat-raised-button color="#8e8e8e" type="submit" [disabled]="!productform.valid">Invia</button> <!-- Il punto esclamativo serve ad invertire il controllo -->
     </form>
+</div>
+
 </div>
