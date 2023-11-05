@@ -15,3 +15,25 @@
 .generalDiv{
   min-height: 100vh;
 }
+
+.tableView{
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  margin-bottom: 5vh; 
+}
+
+.lineaDivisoria{
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  border-top: 3px solid #8e8e8e;
+}
+
+.font{
+  color: #8e8e8e;
+  font-family: Poppins;
+  font-size: auto;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+}

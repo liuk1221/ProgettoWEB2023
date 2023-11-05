@@ -4,9 +4,45 @@
     <!-- BOTTONE CHE SERVE AD ACCEDERE AL COMPONENTE DI GESTIONE DEL FIRESTORE, VISIBILE SOLO ALL'ADMIN -->
     <div class="bottoneGestione" *ngIf="auth.isAdministrator()">
         <div class="center-container">
-            <button mat-button routerLink="/gestione">GESTISCI PRODOTTI</button>
+            <button mat-button routerLink="/gestione">GESTISCI PRODOTTI E ORDINI</button>
         </div>
     </div>
+
+    <div class="lineaDivisoria" *ngIf="auth.isAdministrator()"></div>
+
+    <!-- TABELLA PER GLI ORDINI EFFETTUATI DALL'UTENTE AUTENTICATO -->
+    <div class="tableView">
+        <div class="col-md-8 mt-2">
+          <h5 class="font" style="font-size: 3vh; text-align: center;">Lista Ordini</h5>
+          <div class="card p-3 shadow">
+            <div class="card-body">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col" class="font" style="font-size: 2vh; color:black !important;">Nome Prodotto</th>
+                    <th scope="col" class="font" style="font-size: 2vh; color:black !important;">Categoria Prodotto</th>
+                    <th scope="col" class="font" style="font-size: 2vh; color:black !important;">Quantità Ordinata</th>
+                    <th scope="col" class="font" style="font-size: 2vh; color:black !important;">Utente</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let ordine of listaOrdiniFiltrati">
+                    <td class="font">{{ordine.nomeProdotto}}</td>
+                    <td class="font">{{ordine.categoryProdotto}}</td>
+                    <td class="font">{{ordine.qtaProdotto}}</td>
+                    <td class="font">{{ordine.utente}}</td>
+                    <td>
+                      <button class="btn btn-outline-danger" (click)="delOrder(ordine)">Elimina</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
 </div>
 
 

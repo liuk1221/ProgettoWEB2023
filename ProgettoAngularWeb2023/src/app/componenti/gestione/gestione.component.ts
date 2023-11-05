@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Category } from 'src/app/modelli/category';
+import { Ordini } from 'src/app/modelli/ordini';
 import { Prodotti } from 'src/app/modelli/prodotti';
 import { AuthService } from 'src/app/servizi/auth.service';
 import { DataService } from 'src/app/servizi/data.service';
+import { OrderService } from 'src/app/servizi/order.service';
 
 
 @Component({
@@ -14,6 +16,7 @@ import { DataService } from 'src/app/servizi/data.service';
 export class GestioneComponent implements OnInit{
 
   listaProdotti: Prodotti[] = [];
+  listaOrdini: Ordini[] = [];
   oggettoProdotto: Prodotti = {
     id: '',
     category: '',
@@ -28,7 +31,7 @@ export class GestioneComponent implements OnInit{
   //GESTIONE DEL FORM
   productform!: FormGroup //Creaiamo un gruppo di controlli. Ogni campo di un form è detto form control. Tanti form control fanno un form group.
 
-  constructor(private auth : AuthService, private data : DataService){}
+  constructor(private auth : AuthService, private data : DataService, private orders : OrderService){}
 
 
   //OnInit
@@ -39,6 +42,7 @@ export class GestioneComponent implements OnInit{
       quantita: new FormControl(null, [Validators.required])
     });
     this.getAllProducts();
+    this.getAllOrders();
   }
 
   //MetodiImplementativi
@@ -51,6 +55,17 @@ export class GestioneComponent implements OnInit{
       })
     }, err => {
       alert('Errore durante il fetch dei dati.');
+    })
+  }
+  getAllOrders(){
+    this.orders.getAllOrders().subscribe(res => {
+      this.listaOrdini = res.map((e:any) => {
+        const order = e.payload.doc.data();
+        order.id = e.payload.doc.id;
+        return order;
+      })
+    }, err => {
+      alert('Errore durante il fetch degli ordini.');
     })
   }
 
@@ -68,6 +83,10 @@ export class GestioneComponent implements OnInit{
   delProduct(prodotto : Prodotti){
     if(window.confirm('Sei sicuro di voler eliminare il prodotto: '+prodotto.nome+' ?'))
     this.data.delProduct(prodotto)
+  }
+  delOrder(ordine : Ordini){
+    if(window.confirm('Sei sicuro di voler eliminare questo ordine? id:'+ordine.id))
+    this.orders.delOrder(ordine)
   }
 
 
@@ -113,8 +132,5 @@ export class GestioneComponent implements OnInit{
   ];
   selectedCategory = this.categorys[0].value;                                //Inizializza la variabile per il two-way binding al valore "tutto"
 
-
-
-  //TABELLA e GESTIONE
 
 }
