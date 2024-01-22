@@ -12,6 +12,7 @@ export class AccountComponent implements OnInit, DoCheck{
 
   constructor(public auth : AuthService, private order : OrderService){}
   
+  //Ciclo di vita del componente
   ngDoCheck(): void {
     this.filtraOrdini();
   }
